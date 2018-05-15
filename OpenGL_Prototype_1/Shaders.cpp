@@ -4,13 +4,6 @@
 
 Shader::Shader(const std::string& fileName)
 {
-    GLint GlewInitResult = glewInit();
-    if (GLEW_OK != GlewInitResult)
-    {
-        printf("ERROR: %s\n", glewGetErrorString(GlewInitResult));
-        exit(EXIT_FAILURE);
-    }
-
     m_program = glCreateProgram();
     m_shaders[0] = CreateShader(LoadShader(fileName + ".vs"), GL_VERTEX_SHADER);
     m_shaders[1] = CreateShader(LoadShader(fileName + ".fs"), GL_FRAGMENT_SHADER);
