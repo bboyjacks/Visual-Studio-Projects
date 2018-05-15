@@ -13,13 +13,14 @@ Shader::Shader(const std::string& fileName)
 
     glBindAttribLocation(m_program, 0, "position");
     glBindAttribLocation(m_program, 1, "texCoord");
-    //glBindAttribLocation(m_program, 2, "normal");
 
     glLinkProgram(m_program);
     CheckShaderError(m_program, GL_LINK_STATUS, true, "Error linking shader program");
 
     glValidateProgram(m_program);
     CheckShaderError(m_program, GL_LINK_STATUS, true, "Invalid shader program");
+
+    m_uniforms[TRANSFORM_U] = glGetUniformLocation(m_program, "transform");
 }
 
 Shader::~Shader()
@@ -36,6 +37,12 @@ Shader::~Shader()
 void Shader::Bind()
 {
     glUseProgram(m_program);
+}
+
+void Shader::Update(const Transform& transform)
+{
+  glm::mat4 model = transform.GetModel();
+  glUniformMatrix4fv(m_uniforms[TRANSFORM_U], 1, GL_FALSE, &model[0][0]);
 }
 
 std::string Shader::LoadShader(const std::string& fileName)
