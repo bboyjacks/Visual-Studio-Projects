@@ -175,8 +175,9 @@
     <ClInclude Include="Transform.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="basicShader.fs" />
-    <None Include="basicShader.vs" />
+    <None Include="basicShader.frag" />
+    <None Include="basicShader.vert" />
+    <None Include="batman70.fbx" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="bricks.jpg" />

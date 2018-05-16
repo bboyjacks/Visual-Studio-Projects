@@ -64,10 +64,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="basicShader.fs">
+    <None Include="basicShader.frag">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="basicShader.vs">
+    <None Include="basicShader.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="batman70.fbx">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
