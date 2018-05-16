@@ -1,0 +1,12 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (OpenGL_Prototype_1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Display.cpp
+  main.cpp
+c:\users\lgdel\documents\projects\projects\opengl_prototype_1\main.cpp(31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Mesh.cpp
+  obj_loader.cpp
+c:\users\lgdel\documents\projects\projects\opengl_prototype_1\obj_loader.cpp(378): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Shaders.cpp
+  Texture.cpp
+  Generating Code...
+  stb_image.c
+  OpenGL_Prototype_1.vcxproj -> C:\Users\lgdel\Documents\Projects\Projects\Debug\OpenGLIntroduction.exe
