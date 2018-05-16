@@ -5,7 +5,7 @@
   <PropertyGroup />
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)Include;$(SolutionDir)..\..\3rdPartyResource\glew\include;$(SolutionDir)..\..\3rdPartyResource\glm;$(SolutionDir)..\..\3rdPartyResource\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)BaseLib\Include;$(SolutionDir)..\..\3rdPartyResource\glew\include;$(SolutionDir)..\..\3rdPartyResource\glm;$(SolutionDir)..\..\3rdPartyResource\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile />
     </ClCompile>
     <Link>
