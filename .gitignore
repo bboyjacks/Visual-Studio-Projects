@@ -1,6 +1,11 @@
 *.vs/
-Debug/*
-x64/
-*/Debug/
-*/Release
+*/Debug/*
+*/x64/*
+*/Debug/*
+*/Release*
 */x64
+*.lib
+*.pdb
+*.obj
+*.tlog
+*.obj.mtl
