@@ -21,6 +21,11 @@ public:
     return m_perspective * glm::lookAt(m_position, m_position + m_forward, m_up);
   }
 
+  inline void SetPosition(const glm::vec3& pos)
+  {
+    m_position = pos;
+  }
+
 private:
   glm::mat4 m_perspective;
   glm::vec3 m_position;
