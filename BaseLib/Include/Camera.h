@@ -14,21 +14,22 @@ public:
     m_position = pos;
     m_forward = glm::vec3(0, 0, 1);
     m_up = glm::vec3(0, 1, 0);
+    m_leftAngle = 0.0f;
+    m_distance = m_position.z;
   }
 
   inline glm::mat4 GetViewProjection() const
   {
-    return m_perspective * glm::lookAt(m_position, m_position + m_forward, m_up);
+    return m_perspective * glm::lookAt(m_position, glm::vec3(0,0,0), m_up);
   }
 
-  inline void SetPosition(const glm::vec3& pos)
+  inline void MoveLeft()
   {
-    m_position = pos;
-  }
-
-  inline glm::vec3 GetPosition() const
-  {
-    return m_position;
+    m_leftAngle += 0.1f;
+    m_position.z = m_distance * glm::cos(m_leftAngle);
+    m_position.x = m_distance * glm::sin(m_leftAngle);
+    if (m_leftAngle > 2 * glm::pi<float>())
+      m_leftAngle = 0.0f;
   }
 
 private:
@@ -36,4 +37,6 @@ private:
   glm::vec3 m_position;
   glm::vec3 m_forward;
   glm::vec3 m_up;
+  float m_leftAngle;
+  float m_distance;
 };
