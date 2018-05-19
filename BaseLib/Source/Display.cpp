@@ -17,6 +17,8 @@ Display::Display(int width, int height, const std::string& title)
   m_window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
   m_glContext = SDL_GL_CreateContext(m_window);
   m_isClosed = false;
+  m_width = width;
+  m_height = height;
 
   glEnable(GL_DEPTH_TEST);
 
@@ -51,9 +53,23 @@ void Display::Update()
   {
     if (e.type == SDL_QUIT)
       m_isClosed = true;
-    if (e.type == SDL_MOUSEMOTION)
+    else if (e.type == SDL_MOUSEBUTTONDOWN)
+      m_mouseEventHandler.WatchMouseOn(e.button);
+    else if (e.type == SDL_MOUSEBUTTONUP)
+      m_mouseEventHandler.WatchMouseOff();
+    else if (e.type == SDL_MOUSEMOTION)
     {
-      std::cout << "(" << e.motion.x << "," << e.motion.y << ")" << std::endl;
+      m_mouseEventHandler.WatchMotionEvent(e.motion);
     }
   }
+}
+
+int Display::Height() const
+{
+  return m_height;
+}
+
+int Display::Width() const
+{
+  return m_width;
 }

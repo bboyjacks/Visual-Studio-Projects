@@ -139,6 +139,13 @@
       <Project>{ca71a379-f435-4f20-86e3-a9170bec4db1}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\basicShader.frag" />
+    <None Include="Resource\basicShader.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resource\bricks.jpg" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
