@@ -1,9 +1,10 @@
 #include "MouseEventHandler.h"
 #include <iostream>
 
-MouseEventHandler::MouseEventHandler(const Display& display)
+MouseEventHandler::MouseEventHandler(int width, int height)
 {
-  m_display = display;
+  m_width = width;
+  m_height = height;
   m_watchMouse = false;
 }
 
@@ -18,6 +19,7 @@ void MouseEventHandler::WatchMotionEvent(const SDL_MouseMotionEvent& mouseMotion
   if (m_watchMouse)
   {
     m_vectorDirection = glm::vec2(mouseMotionEvent.x, mouseMotionEvent.y) - m_vectorStartPoint;
+    m_vectorDirection = glm::vec2(m_vectorDirection.x / m_width, m_vectorDirection.y / m_height);
     std::cout << "<" << m_vectorDirection.x << " , " << m_vectorDirection.y << ">" << std::endl;
   }
 }

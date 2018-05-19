@@ -15,16 +15,11 @@ public:
   bool isClosed();
   void Update();
 
-  int Height() const;
-  int Width() const;
-
   virtual ~Display();
 protected:
 private:
-  MouseEventHandler m_mouseEventHandler;
+  MouseEventHandler* m_mouseEventHandler;
   SDL_Window* m_window;
   SDL_GLContext m_glContext;
-  int m_width;
-  int m_height;
   bool m_isClosed;
 };
