@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="Source\Display.cpp" />
     <ClCompile Include="Source\Mesh.cpp" />
+    <ClCompile Include="Source\MouseEventHandler.cpp" />
     <ClCompile Include="Source\obj_loader.cpp" />
     <ClCompile Include="Source\Shaders.cpp" />
     <ClCompile Include="Source\stb_image.c" />
@@ -30,6 +31,7 @@
     <ClInclude Include="Include\Camera.h" />
     <ClInclude Include="Include\Display.h" />
     <ClInclude Include="Include\Mesh.h" />
+    <ClInclude Include="Include\MouseEventHandler.h" />
     <ClInclude Include="Include\obj_loader.h" />
     <ClInclude Include="Include\Shaders.h" />
     <ClInclude Include="Include\stb_image.h" />
