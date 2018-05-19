@@ -22,6 +22,7 @@ private:
   glm::vec2 m_transform;
   int m_width;
   int m_height;
-  bool m_watchMouse;
+  bool m_watchMouseLeft;
+  bool m_watchMouseRight;
 };
 
