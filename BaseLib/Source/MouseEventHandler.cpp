@@ -20,13 +20,13 @@ void MouseEventHandler::WatchMotionEvent(const SDL_MouseMotionEvent& mouseMotion
   {
     m_vectorDirection = glm::vec2(mouseMotionEvent.x, mouseMotionEvent.y) - m_vectorStartPoint;
     m_vectorDirection = glm::vec2(m_vectorDirection.x / m_width, m_vectorDirection.y / m_height);
-    std::cout << "<" << m_vectorDirection.x << " , " << m_vectorDirection.y << ">" << std::endl;
+    std::cout << m_vectorDirection.x << " , " << m_vectorDirection.y << std::endl;
   }
 }
 
 void MouseEventHandler::WatchMouseOff()
 {
-  m_vectorStartPoint = glm::vec2();
+  m_vectorStartPoint = glm::vec2(0, 0);
   m_watchMouse = false;
 }
 

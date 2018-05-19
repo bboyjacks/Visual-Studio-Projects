@@ -2,7 +2,7 @@
 #include <GL/glew.h>
 #include <iostream>
 
-Display::Display(int width, int height, const std::string& title)
+Display::Display(int width, int height, const std::string& title, MouseEventHandler& mouseEventHandler) : m_mouseEventHandler(mouseEventHandler)
 {
   SDL_Init(SDL_INIT_EVERYTHING);
 
@@ -17,7 +17,6 @@ Display::Display(int width, int height, const std::string& title)
   m_window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
   m_glContext = SDL_GL_CreateContext(m_window);
   m_isClosed = false;
-  m_mouseEventHandler = new MouseEventHandler(width, height);
 
   glEnable(GL_DEPTH_TEST);
 
@@ -27,7 +26,6 @@ Display::Display(int width, int height, const std::string& title)
 
 Display::~Display()
 {
-  delete(m_mouseEventHandler);
   SDL_GL_DeleteContext(m_glContext);
   SDL_DestroyWindow(m_window);
   SDL_Quit();
@@ -54,12 +52,10 @@ void Display::Update()
     if (e.type == SDL_QUIT)
       m_isClosed = true;
     else if (e.type == SDL_MOUSEBUTTONDOWN)
-      m_mouseEventHandler->WatchMouseOn(e.button);
+      m_mouseEventHandler.WatchMouseOn(e.button);
     else if (e.type == SDL_MOUSEBUTTONUP)
-      m_mouseEventHandler->WatchMouseOff();
+      m_mouseEventHandler.WatchMouseOff();
     else if (e.type == SDL_MOUSEMOTION)
-    {
-      m_mouseEventHandler->WatchMotionEvent(e.motion);
-    }
+      m_mouseEventHandler.WatchMotionEvent(e.motion);
   }
 }

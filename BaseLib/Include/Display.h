@@ -9,7 +9,7 @@
 class Display
 {
 public:
-  Display(int width, int height, const std::string& title);
+  Display(int width, int height, const std::string& title, MouseEventHandler& mouseEventHandler);
 
   void Clear(float r, float g, float b, float a);
   bool isClosed();
@@ -18,7 +18,7 @@ public:
   virtual ~Display();
 protected:
 private:
-  MouseEventHandler* m_mouseEventHandler;
+  MouseEventHandler& m_mouseEventHandler;
   SDL_Window* m_window;
   SDL_GLContext m_glContext;
   bool m_isClosed;

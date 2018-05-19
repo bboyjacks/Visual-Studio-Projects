@@ -2,6 +2,7 @@
 
 #include <glm/glm.hpp>
 #include <SDL.h>
+#include "Transform.h"
 
 class MouseEventHandler
 {
@@ -16,6 +17,7 @@ public:
 private:
   glm::vec2 m_vectorStartPoint;
   glm::vec2 m_vectorDirection;
+  glm::vec2 m_transform;
   int m_width;
   int m_height;
   bool m_watchMouse;

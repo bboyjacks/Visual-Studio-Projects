@@ -9,6 +9,7 @@
 #include "Shaders.h"
 #include "Texture.h"
 #include "Transform.h"
+#include "MouseEventHandler.h"
 
 #define WIDTH 800
 #define HEIGHT 600
@@ -17,7 +18,8 @@
 
 int main()
 {
-  Display display(WIDTH, HEIGHT, "Hello world!");
+  MouseEventHandler mouseEventHandler(WIDTH, HEIGHT);
+  Display display(WIDTH, HEIGHT, "Hello world!", mouseEventHandler);
 
   Mesh cube("./Resource/roof.obj");
   Texture texture("./Resource/bricks.jpg");
