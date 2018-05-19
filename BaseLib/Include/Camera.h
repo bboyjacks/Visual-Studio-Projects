@@ -26,6 +26,11 @@ public:
     m_position = pos;
   }
 
+  inline glm::vec3 GetPosition() const
+  {
+    return m_position;
+  }
+
 private:
   glm::mat4 m_perspective;
   glm::vec3 m_position;

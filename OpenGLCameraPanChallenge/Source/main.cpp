@@ -18,13 +18,13 @@
 
 int main()
 {
-  MouseEventHandler mouseEventHandler(WIDTH, HEIGHT);
+  Camera camera(glm::vec3(0.0f, 0.0f, -100.0f), 70.0f, (float)WIDTH / (float)HEIGHT, 0.01f, 1000.0f);
+  MouseEventHandler mouseEventHandler(WIDTH, HEIGHT, camera);
   Display display(WIDTH, HEIGHT, "Hello world!", mouseEventHandler);
 
   Mesh cube("./Resource/roof.obj");
   Texture texture("./Resource/bricks.jpg");
   Shader shader("./Resource/basicShader");
-  Camera camera(glm::vec3(0, 0, -100), 70.0f, (float)WIDTH / (float)HEIGHT, 0.01f, 1000.0f);
   Transform transform;
 
   float counter = 0.0f;
